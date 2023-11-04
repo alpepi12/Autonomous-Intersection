@@ -1,0 +1,708 @@
+#VRML_SIM R2021a utf8
+WorldInfo {
+  title "intersection"
+  basicTimeStep 16
+  FPS 30
+  coordinateSystem "NUE"
+}
+Viewpoint {
+  orientation -0.627838159028566 0.48078872916548365 0.6120959434394743 2.2222936560204323
+  position -1.3628074165212456 8.865036478895977 0.01797029960696983
+  followType "None"
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+Floor {
+  translation 0 -0.003 0
+  size 100 100
+  tileSize 0.2 0.2
+  appearance Parquetry {
+    colorOverride 0.0980392 1 0.247059
+    IBLStrength 0
+  }
+}
+Road {
+  name "intersection(1)"
+  id "intersection"
+  width 0.5
+  numberOfLanes 1
+  lines [
+    RoadLine {
+      color 1 0.886275 0.0235294
+      type "none"
+      width 0.05
+    }
+  ]
+  roadBorderHeight 0.02
+  roadBorderWidth [
+    0.1
+  ]
+  leftBorder FALSE
+  wayPoints [
+    0 0 -0.25
+    0 0 0.25
+  ]
+  rightBorderBoundingObject TRUE
+  rightBarrierBoundingObject FALSE
+  leftBarrierBoundingObject FALSE
+}
+Ball {
+  translation 0.6 0.0925 4.57
+  name "Origin"
+  radius 0.1
+}
+WoodenBox {
+  translation 0.52 0.19 0.74
+  size 0.2 0.2 0.05
+  mass 1
+}
+WoodenBox {
+  translation 0.76 0.19 0.64
+  rotation 0 -1 0 -1.5707953071795862
+  name "wooden box(1)"
+  size 0.2 0.2 0.05
+  mass 1
+}
+Road {
+  name "road_negZ(1)"
+  id "road1"
+  width 0.5
+  lines [
+    RoadLine {
+      color 1 0.886275 0.0235294
+      type "continuous"
+      width 0.05
+    }
+  ]
+  roadBorderHeight 0.02
+  roadBorderWidth [
+    0.1
+  ]
+  wayPoints [
+    0 0 -17
+    0 0 -0.25
+  ]
+  rightBorderBoundingObject TRUE
+  leftBorderBoundingObject TRUE
+  rightBarrierBoundingObject FALSE
+  leftBarrierBoundingObject FALSE
+}
+Road {
+  name "road_posZ"
+  id "road1"
+  width 0.5
+  lines [
+    RoadLine {
+      color 1 0.886275 0.0235294
+      type "continuous"
+      width 0.05
+    }
+  ]
+  roadBorderHeight 0.02
+  roadBorderWidth [
+    0.1
+  ]
+  wayPoints [
+    0 0 0.25
+    0 0 17
+  ]
+  rightBorderBoundingObject TRUE
+  leftBorderBoundingObject TRUE
+  rightBarrierBoundingObject FALSE
+  leftBarrierBoundingObject FALSE
+}
+Road {
+  translation 0 -0.001 0
+  name "road_posX"
+  id "road1"
+  width 0.5
+  lines [
+    RoadLine {
+      color 1 0.886275 0.0235294
+      type "continuous"
+      width 0.05
+    }
+  ]
+  roadBorderHeight 0.02
+  roadBorderWidth [
+    0.1
+  ]
+  wayPoints [
+    17 0 0
+    0.25 0 0
+  ]
+  rightBorderBoundingObject TRUE
+  leftBorderBoundingObject TRUE
+  rightBarrierBoundingObject FALSE
+  leftBarrierBoundingObject FALSE
+}
+Wall {
+  translation 0.26 0 8.63
+  size 0.01 0.018 16.75
+  appearance Roughcast {
+    colorOverride 0.298039 0.305882 0.286275
+    textureTransform TextureTransform {
+      scale 1 2.4
+    }
+  }
+}
+Wall {
+  translation -0.26 0 0
+  name "wall(3)"
+  size 0.01 0.018 34
+  appearance Roughcast {
+    colorOverride 0.298039 0.305882 0.286275
+    textureTransform TextureTransform {
+      scale 1 2.4
+    }
+  }
+}
+Wall {
+  translation 0.26 0 -8.63
+  name "wall(1)"
+  size 0.01 0.018 16.75
+  appearance Roughcast {
+    colorOverride 0.298039 0.305882 0.286275
+    textureTransform TextureTransform {
+      scale 1 2.4
+    }
+  }
+}
+Wall {
+  translation 8.63 0 0.26
+  rotation 0 1 0 1.5707996938995747
+  name "wall(4)"
+  size 0.01 0.017 16.75
+  appearance Roughcast {
+    colorOverride 0.298039 0.305882 0.286275
+    textureTransform TextureTransform {
+      scale 1 2.4
+    }
+  }
+}
+Wall {
+  translation 8.63 0 -0.26
+  rotation 0 1 0 1.5707996938995747
+  name "wall(2)"
+  size 0.01 0.017 16.75
+  appearance Roughcast {
+    colorOverride 0.298039 0.305882 0.286275
+    textureTransform TextureTransform {
+      scale 1 2.4
+    }
+  }
+}
+TinkerbotsBase {
+  translation -0.152665 0.0230871 -2.29119
+  rotation 0.0005121732391380286 0.9999994669082312 -0.0008965834186224012 0.137216
+  name "Tinkerbots(2)"
+  controller "my_controller"
+  upSlot TinkerbotsPivot {
+    rotation 0 0 1 1.5708003061004252
+    slot TinkerbotsMotor {
+      upASlot Slot {
+        endPoint Camera {
+          translation -0.00999988 0.05 -0.07
+          rotation 0 1 0 3.14159
+          width 360
+          height 360
+        }
+      }
+      upCSlot Slot {
+        endPoint DistanceSensor {
+          translation -0.00999997 0.01 0.00999991
+          rotation 0.7071067811862364 9.381857096790023e-07 0.7071067811862364 3.14159
+          name "obstacle_sensor"
+          lookupTable [
+            0 0 0
+            0.1 10 0
+            0.2 20 0
+            0.3 30 0
+          ]
+          type "sonar"
+          numberOfRays 4
+          aperture 0.6
+          resolution 0.01
+        }
+      }
+      frontSlot TinkerbotsAxle {
+        name "FR_axle"
+        endSlot TinkerbotsWheel {
+        }
+      }
+      backSlot TinkerbotsAxle {
+        name "FL_axle"
+        endSlot TinkerbotsWheel {
+        }
+      }
+    }
+  }
+  downASlot TinkerbotsCubieBoxWithRoundSlots {
+    name "rear_right_box"
+    axisSlot TinkerbotsAxle {
+      translation 0 0 0.004
+      rotation 0 1 0 3.141592653589793
+      name "RR_axle"
+      endSlot TinkerbotsWheel {
+        name "RR_wheel"
+      }
+    }
+  }
+  downCSlot TinkerbotsCubieBoxWithRoundSlots {
+    name "rear_left_box"
+    axisSlot TinkerbotsAxle {
+      translation 0 0 0.004
+      rotation 0 1 0 3.141592653589793
+      name "RL_axle"
+      endSlot TinkerbotsWheel {
+      }
+    }
+  }
+  extensionSlot [
+    LED {
+      translation 0 0.02 -0.03
+      children [
+        Group {
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor 0.686275 0.686275 0.686275
+                roughness 1
+                metalness 0
+                IBLStrength 0
+              }
+              geometry DEF LED_SHAPE Sphere {
+                radius 0.01
+                subdivision 2
+              }
+              castShadows FALSE
+            }
+            PointLight {
+              attenuation 0 0 0
+              color 0 0 0
+              location 0 0.03 0
+              on FALSE
+              radius 0.031
+              castShadows TRUE
+            }
+          ]
+        }
+      ]
+      color [
+        1 0 0
+        0 0 1
+      ]
+    }
+    Receiver {
+    }
+    Emitter {
+    }
+    Compass {
+      translation 0 0.02 0
+      resolution 0.01
+    }
+    GPS {
+      translation 0 0.02 0.02
+      resolution 0.01
+      speedResolution 0.01
+    }
+    DistanceSensor {
+      translation -0.02 -0.015 -5.30718e-08
+      rotation 0 1 0 3.14159
+      name "lane_sensor"
+      lookupTable [
+        0 0 0
+        0.75 75 0
+      ]
+      type "laser"
+      aperture 0.01
+      resolution 0.01
+    }
+  ]
+}
+TinkerbotsBase {
+  translation -0.121743 0.0230871 -1.49787
+  rotation 0.0005121732391380286 0.9999994669082312 -0.0008965834186224012 0.137216
+  name "Tinkerbots(1)"
+  controller "my_controller"
+  upSlot TinkerbotsPivot {
+    rotation 0 0 1 1.5708003061004252
+    slot TinkerbotsMotor {
+      upASlot Slot {
+        endPoint Camera {
+          translation -0.00999988 0.05 -0.07
+          rotation 0 1 0 3.14159
+          width 360
+          height 360
+        }
+      }
+      upCSlot Slot {
+        endPoint DistanceSensor {
+          translation -0.00999997 0.01 0.00999991
+          rotation 0.7071067811862364 9.381857096790023e-07 0.7071067811862364 3.14159
+          name "obstacle_sensor"
+          lookupTable [
+            0 0 0
+            0.1 10 0
+            0.2 20 0
+            0.3 30 0
+          ]
+          type "sonar"
+          numberOfRays 4
+          aperture 0.6
+          resolution 0.01
+        }
+      }
+      frontSlot TinkerbotsAxle {
+        name "FR_axle"
+        endSlot TinkerbotsWheel {
+        }
+      }
+      backSlot TinkerbotsAxle {
+        name "FL_axle"
+        endSlot TinkerbotsWheel {
+        }
+      }
+    }
+  }
+  downASlot TinkerbotsCubieBoxWithRoundSlots {
+    name "rear_right_box"
+    axisSlot TinkerbotsAxle {
+      translation 0 0 0.004
+      rotation 0 1 0 3.141592653589793
+      name "RR_axle"
+      endSlot TinkerbotsWheel {
+        name "RR_wheel"
+      }
+    }
+  }
+  downCSlot TinkerbotsCubieBoxWithRoundSlots {
+    name "rear_left_box"
+    axisSlot TinkerbotsAxle {
+      translation 0 0 0.004
+      rotation 0 1 0 3.141592653589793
+      name "RL_axle"
+      endSlot TinkerbotsWheel {
+      }
+    }
+  }
+  extensionSlot [
+    LED {
+      translation 0 0.02 -0.03
+      children [
+        Group {
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor 0.686275 0.686275 0.686275
+                roughness 1
+                metalness 0
+                IBLStrength 0
+              }
+              geometry DEF LED_SHAPE Sphere {
+                radius 0.01
+                subdivision 2
+              }
+              castShadows FALSE
+            }
+            PointLight {
+              attenuation 0 0 0
+              color 0 0 0
+              location 0 0.03 0
+              on FALSE
+              radius 0.031
+              castShadows TRUE
+            }
+          ]
+        }
+      ]
+      color [
+        1 0 0
+        0 0 1
+      ]
+    }
+    Receiver {
+    }
+    Emitter {
+    }
+    Compass {
+      translation 0 0.02 0
+      resolution 0.01
+    }
+    GPS {
+      translation 0 0.02 0.02
+      resolution 0.01
+      speedResolution 0.01
+    }
+    DistanceSensor {
+      translation -0.02 -0.015 -5.30718e-08
+      rotation 0 1 0 3.14159
+      name "lane_sensor"
+      lookupTable [
+        0 0 0
+        0.75 75 0
+      ]
+      type "laser"
+      aperture 0.01
+      resolution 0.01
+    }
+  ]
+}
+TinkerbotsBase {
+  translation 0.114767 0.0229109 1.52367
+  rotation 6.16094998449173e-05 0.999999997482812 3.5194399911409085e-05 -3.0043753071795862
+  name "Tinkerbots(7)"
+  controller "my_controller"
+  upSlot TinkerbotsPivot {
+    rotation 0 0 1 1.5708003061004252
+    slot TinkerbotsMotor {
+      upASlot Slot {
+        endPoint Camera {
+          translation -0.00999988 0.05 -0.07
+          rotation 0 1 0 3.14159
+          width 360
+          height 360
+        }
+      }
+      upCSlot Slot {
+        endPoint DistanceSensor {
+          translation -0.00999997 0.01 0.00999991
+          rotation 0.7071067811862364 9.381857096790023e-07 0.7071067811862364 3.14159
+          name "obstacle_sensor"
+          lookupTable [
+            0 0 0
+            0.1 10 0
+            0.2 20 0
+            0.3 30 0
+          ]
+          type "sonar"
+          numberOfRays 4
+          aperture 0.6
+          resolution 0.01
+        }
+      }
+      frontSlot TinkerbotsAxle {
+        name "FR_axle"
+        endSlot TinkerbotsWheel {
+        }
+      }
+      backSlot TinkerbotsAxle {
+        name "FL_axle"
+        endSlot TinkerbotsWheel {
+        }
+      }
+    }
+  }
+  downASlot TinkerbotsCubieBoxWithRoundSlots {
+    name "rear_right_box"
+    axisSlot TinkerbotsAxle {
+      translation 0 0 0.004
+      rotation 0 1 0 3.141592653589793
+      name "RR_axle"
+      endSlot TinkerbotsWheel {
+        name "RR_wheel"
+      }
+    }
+  }
+  downCSlot TinkerbotsCubieBoxWithRoundSlots {
+    name "rear_left_box"
+    axisSlot TinkerbotsAxle {
+      translation 0 0 0.004
+      rotation 0 1 0 3.141592653589793
+      name "RL_axle"
+      endSlot TinkerbotsWheel {
+      }
+    }
+  }
+  extensionSlot [
+    LED {
+      translation 0 0.02 -0.03
+      children [
+        Group {
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor 0.686275 0.686275 0.686275
+                roughness 1
+                metalness 0
+                IBLStrength 0
+              }
+              geometry DEF LED_SHAPE Sphere {
+                radius 0.01
+                subdivision 2
+              }
+              castShadows FALSE
+            }
+            PointLight {
+              attenuation 0 0 0
+              color 0 0 0
+              location 0 0.03 0
+              on FALSE
+              radius 0.031
+              castShadows TRUE
+            }
+          ]
+        }
+      ]
+      color [
+        1 0 0
+        0 0 1
+      ]
+    }
+    Receiver {
+    }
+    Emitter {
+    }
+    Compass {
+      translation 0 0.02 0
+      resolution 0.01
+    }
+    GPS {
+      translation 0 0.02 0.02
+      resolution 0.01
+      speedResolution 0.01
+    }
+    DistanceSensor {
+      translation -0.02 -0.015 -5.30718e-08
+      rotation 0 1 0 3.14159
+      name "lane_sensor"
+      lookupTable [
+        0 0 0
+        0.75 75 0
+      ]
+      type "laser"
+      aperture 0.01
+      resolution 0.01
+    }
+  ]
+}
+TinkerbotsBase {
+  translation 0.112922 0.0229109 0.698465
+  rotation 6.16094998449173e-05 0.999999997482812 3.5194399911409085e-05 -3.0043753071795862
+  name "Tinkerbots(3)"
+  controller "my_controller"
+  upSlot TinkerbotsPivot {
+    rotation 0 0 1 1.5708003061004252
+    slot TinkerbotsMotor {
+      upASlot Slot {
+        endPoint Camera {
+          translation -0.00999988 0.05 -0.07
+          rotation 0 1 0 3.14159
+          width 360
+          height 360
+        }
+      }
+      upCSlot Slot {
+        endPoint DistanceSensor {
+          translation -0.00999997 0.01 0.00999991
+          rotation 0.7071067811862364 9.381857096790023e-07 0.7071067811862364 3.14159
+          name "obstacle_sensor"
+          lookupTable [
+            0 0 0
+            0.1 10 0
+            0.2 20 0
+            0.3 30 0
+          ]
+          type "sonar"
+          numberOfRays 4
+          aperture 0.6
+          resolution 0.01
+        }
+      }
+      frontSlot TinkerbotsAxle {
+        name "FR_axle"
+        endSlot TinkerbotsWheel {
+        }
+      }
+      backSlot TinkerbotsAxle {
+        name "FL_axle"
+        endSlot TinkerbotsWheel {
+        }
+      }
+    }
+  }
+  downASlot TinkerbotsCubieBoxWithRoundSlots {
+    name "rear_right_box"
+    axisSlot TinkerbotsAxle {
+      translation 0 0 0.004
+      rotation 0 1 0 3.141592653589793
+      name "RR_axle"
+      endSlot TinkerbotsWheel {
+        name "RR_wheel"
+      }
+    }
+  }
+  downCSlot TinkerbotsCubieBoxWithRoundSlots {
+    name "rear_left_box"
+    axisSlot TinkerbotsAxle {
+      translation 0 0 0.004
+      rotation 0 1 0 3.141592653589793
+      name "RL_axle"
+      endSlot TinkerbotsWheel {
+      }
+    }
+  }
+  extensionSlot [
+    LED {
+      translation 0 0.02 -0.03
+      children [
+        Group {
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor 0.686275 0.686275 0.686275
+                roughness 1
+                metalness 0
+                IBLStrength 0
+              }
+              geometry DEF LED_SHAPE Sphere {
+                radius 0.01
+                subdivision 2
+              }
+              castShadows FALSE
+            }
+            PointLight {
+              attenuation 0 0 0
+              color 0 0 0
+              location 0 0.03 0
+              on FALSE
+              radius 0.031
+              castShadows TRUE
+            }
+          ]
+        }
+      ]
+      color [
+        1 0 0
+        0 0 1
+      ]
+    }
+    Receiver {
+    }
+    Emitter {
+    }
+    Compass {
+      translation 0 0.02 0
+      resolution 0.01
+    }
+    GPS {
+      translation 0 0.02 0.02
+      resolution 0.01
+      speedResolution 0.01
+    }
+    DistanceSensor {
+      translation -0.02 -0.015 -5.30718e-08
+      rotation 0 1 0 3.14159
+      name "lane_sensor"
+      lookupTable [
+        0 0 0
+        0.75 75 0
+      ]
+      type "laser"
+      aperture 0.01
+      resolution 0.01
+    }
+  ]
+}

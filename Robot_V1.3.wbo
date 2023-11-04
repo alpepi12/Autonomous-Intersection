@@ -1,0 +1,149 @@
+#VRML_OBJ R2021a utf8
+TinkerbotsBase {
+  hidden linearVelocity_0 0.5771882128129022 -8.102887079714113e-05 0.001198850663822947
+  hidden angularVelocity_0 0.0003079276124014122 0.046605817510516734 -0.002337239969199013
+  hidden position_7_0 0.0032812374868539038
+  hidden translation_9 0 6.562463197878412e-05 1.076650978509841e-07
+  hidden rotation_9 1 0 0 0.0032812374868136495
+  hidden linearVelocity_9 0.5771954769788086 -0.00023491206735446528 0.00013563119165494798
+  hidden angularVelocity_9 0.00030692901497801644 -0.018170532251393805 -0.002346689741644028
+  hidden position_10_0 168.13031110314364
+  hidden translation_14 -0.01996964302451764 0 0.01889847493295244
+  hidden rotation_14 0 -1 0 4.767493116474392
+  hidden linearVelocity_14 0.5771989504143042 -5.404041515371986e-05 0.00030931699487898336
+  hidden angularVelocity_14 0.011800112847760924 -0.012961649171987631 -22.002343194337808
+  hidden position_19_0 168.44262471518206
+  hidden rotation_20 0.7174240672035396 0.4925956380139538 0.4925974474220884 4.386238177008364
+  hidden linearVelocity_20 0.5783985440475043 -2.646346998258846e-06 0.002835712943746958
+  hidden angularVelocity_20 0.10804033320212275 0.051134078188660254 -22.025198598477335
+  hidden position_23_0 -165.43508115472915
+  hidden rotation_24 -0.38625190483011007 -0.6522293848093011 -0.6522317805860061 2.404397762735789
+  hidden linearVelocity_24 0.5759622037590398 4.540607789204735e-06 0.0028238207955993775
+  hidden angularVelocity_24 0.1075235521817087 0.05130372627813698 -21.920656848594323
+  translation 2.0521242995815627 0.02322357030915859 0.1332248639027238
+  rotation 9.932939538282427e-05 0.9999999939059343 4.8185088005121284e-05 1.5666505326787865
+  name "Tinkerbots(2)"
+  controller "my_controller"
+  upSlot TinkerbotsPivot {
+    rotation 0 0 1 1.5708003061004252
+    slot TinkerbotsMotor {
+      upASlot Slot {
+        endPoint Camera {
+          translation -0.00999988 0.05 -0.07
+          rotation 0 1 0 3.14159
+          width 360
+          height 360
+        }
+      }
+      upCSlot Slot {
+        endPoint DistanceSensor {
+          translation -0.00999997 0.01 0.00999991
+          rotation 0.7071067811862364 9.381857096790023e-07 0.7071067811862364 3.14159
+          name "obstacle_sensor"
+          lookupTable [
+            0 0 0
+            0.1 10 0
+            0.2 20 0
+            0.3 30 0
+          ]
+          type "sonar"
+          numberOfRays 4
+          aperture 0.6
+          resolution 0.01
+        }
+      }
+      frontSlot TinkerbotsAxle {
+        name "FR_axle"
+        endSlot TinkerbotsWheel {
+        }
+      }
+      backSlot TinkerbotsAxle {
+        name "FL_axle"
+        endSlot TinkerbotsWheel {
+        }
+      }
+    }
+  }
+  downASlot TinkerbotsCubieBoxWithRoundSlots {
+    name "rear_right_box"
+    axisSlot TinkerbotsAxle {
+      translation 0 0 0.004
+      rotation 0 1 0 3.141592653589793
+      name "RR_axle"
+      endSlot TinkerbotsWheel {
+        name "RR_wheel"
+      }
+    }
+  }
+  downCSlot TinkerbotsCubieBoxWithRoundSlots {
+    name "rear_left_box"
+    axisSlot TinkerbotsAxle {
+      translation 0 0 0.004
+      rotation 0 1 0 3.141592653589793
+      name "RL_axle"
+      endSlot TinkerbotsWheel {
+      }
+    }
+  }
+  extensionSlot [
+    LED {
+      translation 0 0.02 -0.03
+      children [
+        Group {
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor 0.686275 0.686275 0.686275
+                roughness 1
+                metalness 0
+                IBLStrength 0
+              }
+              geometry DEF LED_SHAPE Sphere {
+                radius 0.01
+                subdivision 2
+              }
+              castShadows FALSE
+            }
+            PointLight {
+              attenuation 0 0 0
+              color 0 0 0
+              location 0 0.03 0
+              on FALSE
+              radius 0.031
+              castShadows TRUE
+            }
+          ]
+        }
+      ]
+      color [
+        1 0 0
+        0 0 1
+      ]
+    }
+    Receiver {
+    }
+    Emitter {
+    }
+    Compass {
+      translation 0 0.02 0
+      resolution 0.01
+    }
+    GPS {
+      translation 0 0.02 0.02
+      resolution 0.01
+      speedResolution 0.01
+    }
+    DistanceSensor {
+      translation -0.02 -0.015 -5.30718e-08
+      rotation 0 1 0 3.14159
+      name "lane_sensor"
+      lookupTable [
+        0 0 0
+        0.75 75 0
+      ]
+      type "laser"
+      aperture 0.01
+      resolution 0.01
+    }
+  ]
+}
